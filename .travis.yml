@@ -10,9 +10,12 @@ branches:
   only:
     - gh-pages
 
-install:
+before_script:
   - npm install -g firebase-tools
-  - npm install 
+
+script:
+  - jasmine test.js
+
 
 after_success:
    - firebase deploy
