@@ -5,17 +5,9 @@ node_js:
   - "6.1"
   - "5.11"
 
+script:
+  - jasmine test.js
 
-branches:
-  only:
-    - gh-pages
-
-install:
-  - npm install -g firebase-tools
-  - npm install 
-
-after_success:
-   - firebase deploy
 
 
 

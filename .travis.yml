@@ -5,16 +5,9 @@ node_js:
   - "6.1"
   - "5.11"
 
-
-before_script:
-  - npm install -g firebase-tools
-
 script:
   - jasmine test.js
 
-
-after_success:
-   - firebase deploy
 
 
 
