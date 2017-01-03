@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="">
+
+</head>
+<body>
+	
+	<form action="/form" method="post" enctype="multipart/form-data">
+	
+		<input name="photo" type="file" class="selfie" id="select-img" accept="image/*" required>
+		 <input type="submit"  />	
+	</form>	
+
+
+		<img src="" id="tempImage">
+		<div id="imageContainer"></div>
+		<canvas id="qr-canvas" width="200" height="200"></canvas>
+		<script src="bundle.js"></script>
+</body>
+</html>

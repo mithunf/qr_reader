@@ -1,41 +1,52 @@
-import QrCode from 'qrcode-reader';
-var qr = new QrCode();
+// import QrCode from 'qrcode-reader';
+// import $ from 'jquery';
 
 
-$(document).ready(function() {
-		
+// var qr = new QrCode();
 
-	var input = document.querySelector('input[type=file]');
-	input.addEventListener('change', function () {
-    	var file = input.files[0];
-	    drawOnCanvas(file);
-	});
+// $(document).ready(function() {
 
-	function drawOnCanvas(file) {
+// 	qr.callback = function(result,err) {
+// 			if( result ) {
+// 				console.log("result : " + result);	
+// 				$('#imageContainer').append(result);
+// 			}
+// 			if( err ) {
+// 				console.log("error : " + err);
+// 				$('#imageContainer').append(err);
+// 			}
+		 	
+		 		
+// 	   }
 
-		 qr.callback = function(result,err) {
-		 	console.log(result);
-		 	$('#imageContainer').append(result);	
-		 }
+// 	var canvas =  document.getElementById("qr-canvas");
+// 	var ctx = canvas.getContext("2d");
+
+// 	var input = document.querySelector('input[type=file]');
+// 	input.addEventListener('change', function () {
+//     	var file = input.files[0];
+// 	    check(file);
+// 	});
+
+// 	function check(file) {
+
+// 	   var reader = new FileReader();
+
+// 	   reader.onload = function (e) {
+// 	     var dataURL = e.target.result;
+// 	        $('#tempImage').attr("src", dataURL);
+// 			/*$('#tempImage').css("display","none");*/	        
+// 	        var img =  document.getElementById('tempImage');
+// 	        img.onload = function() {
+// 	        	ctx.drawImage(img,0,0,150,180);
+// 	      		qr.decode();
+// 	        };
+	        
+// 	    }; 
+// 	    reader.readAsDataURL(file);
+// 	}
 
 
+// });
 
 
-
-
-		// We use the File APi to read the content of the input file element
-	   var reader = new FileReader();
-
-	    // On reader load with parse the content and draw it on Canvas
-	    reader.onload = function (e) {
-	       var dataURL = e.target.result;
-	        $('#tempImage').attr("src", dataURL);
-
-
-	         var data =	qr.decode(dataURL);
-	      
-	    };
-
-	    reader.readAsDataURL(file);
-	}
-});
